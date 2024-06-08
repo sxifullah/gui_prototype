@@ -34,8 +34,7 @@ void main() {
         findsOneWidget);
 
     // Check if the button is actually found and interactable
-    final activateButton = find.text('Activate');
-    expect(activateButton, findsOneWidget);
+    expect(find.text('Activate'), findsOneWidget);
 
     // Tap the 'Activate' button.
     //await tester.tap(activateButton);
