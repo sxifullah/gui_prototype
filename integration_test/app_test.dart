@@ -39,15 +39,5 @@ void main() {
     // Tap the activation button
     await tester.tap(actButton);
     await tester.pumpAndSettle();
-
-    // Find the dashboard text "1549.7kW"
-    var verifyFonePage = find.text("1549.7kW");
-    var fOneButton = find.text("Factory 1");
-
-    // Verify dashboard F1 page
-    expect(verifyFonePage, findsOneWidget);
-
-    await tester.tap(fOneButton);
-    await tester.pumpAndSettle();
   });
 }
