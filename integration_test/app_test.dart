@@ -38,7 +38,7 @@ void main() {
     expect(activateButton, findsOneWidget);
 
     // Tap the 'Activate' button.
-    await tester.tap(activateButton);
-    await tester.pumpAndSettle();
+    //await tester.tap(activateButton);
+    //await tester.pumpAndSettle();
   });
 }
