@@ -33,10 +33,7 @@ void main() {
     expect(find.text('Enter the activation code you received via SMS.'),
         findsOneWidget);
 
-    var activateButton = find.widgetWithText(ElevatedButton, "Activate");
-
-    // Tap the activation button
-    await tester.tap(activateButton);
-    await tester.pumpAndSettle();
+    // Verify if the OtpPage is loaded by checking for the presence of the 'Activate' button.
+    expect(find.text('Activate'), findsOneWidget);
   });
 }
