@@ -19,6 +19,7 @@ void main() {
 
     var checkBox = find.text("I agree to the terms & conditions");
     await tester.tap(checkBox);
+    await tester.pump();
 
     // Find the activation button (assuming it has a text label "Get Activation Code")
     var activationButton = find.text("Get Activation Code");
