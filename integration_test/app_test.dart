@@ -35,5 +35,9 @@ void main() {
 
     // Verify if the OtpPage is loaded by checking for the presence of the 'Activate' button.
     expect(find.text('Activate'), findsOneWidget);
+
+    // Tap the 'Activate' button.
+    await tester.tap(find.text('Activate'));
+    await tester.pumpAndSettle();
   });
 }
