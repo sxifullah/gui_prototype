@@ -27,13 +27,23 @@ void main() {
     await tester.tap(activationButton);
     await tester.pumpAndSettle();
 
-    var verifyOtpPage = find.text("SMS");
+    var verifyOtpPage =
+        find.text("Enter the activation code you received via SMS.");
     var actButton = find.text("Activate");
 
     // Verify activation page
     expect(verifyOtpPage, findsOneWidget);
 
     await tester.tap(actButton);
+    await tester.pumpAndSettle();
+
+    var verifyFonePage = find.text("1549.7kW");
+    var fOneButton = find.text("Factory 1");
+
+    // Verify dashboard F1 page
+    expect(verifyFonePage, findsOneWidget);
+
+    await tester.tap(fOneButton);
     await tester.pumpAndSettle();
   });
 }
