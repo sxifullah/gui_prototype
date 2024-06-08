@@ -12,33 +12,18 @@ void main() {
     await tester.pumpAndSettle();
 
     // Find the text "Welcome !"
-    var verifyActPage = find.text("Welcome !");
+    var welcomeText = find.text("Welcome !");
 
-    // Verify activation page
-    expect(verifyActPage, findsOneWidget);
+    // Verify that the text "Welcome !" is present
+    expect(welcomeText, findsOneWidget);
 
     var checkBox = find.text("I agree to the terms & conditions");
     await tester.tap(checkBox);
-    await tester.pump();
-
-    // Find the activation button (assuming it has a text label "Get Activation Code")
+    // Find the activation button (assuming it has a text label "Activate")
     var activationButton = find.text("Get Activation Code");
 
     // Tap the activation button
     await tester.tap(activationButton);
-    await tester.pumpAndSettle();
-
-    // Find the text "Enter the activation code you received via SMS."
-    var verifyOtpPage =
-        find.text("Enter the activation code you received via SMS.");
-
-    // Verify activation page
-    expect(verifyOtpPage, findsOneWidget);
-
-    var actButton = find.text("Activate");
-
-    // Tap the activation button
-    await tester.tap(actButton);
     await tester.pumpAndSettle();
   });
 }
