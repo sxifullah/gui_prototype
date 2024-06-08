@@ -20,24 +20,28 @@ void main() {
     var checkBox = find.text("I agree to the terms & conditions");
     await tester.tap(checkBox);
 
-    // Find the activation button (assuming it has a text label "Activate")
+    // Find the activation button (assuming it has a text label "Get Activation Code")
     var activationButton = find.text("Get Activation Code");
 
     // Tap the activation button
     await tester.tap(activationButton);
     await tester.pumpAndSettle();
 
+    // Find the text "Enter the activation code you received via SMS."
     var verifyOtpPage =
-        find.byKey(Key("Enter the activation code you received via SMS."));
-    var actButton = find.text("Activate");
+        find.text("Enter the activation code you received via SMS.");
 
     // Verify activation page
     expect(verifyOtpPage, findsOneWidget);
 
+    var actButton = find.text("Activate");
+
+    // Tap the activation button
     await tester.tap(actButton);
     await tester.pumpAndSettle();
 
-    var verifyFonePage = find.byKey(Key("1549.7kW"));
+    // Find the dashboard text "1549.7kW"
+    var verifyFonePage = find.text("1549.7kW");
     var fOneButton = find.text("Factory 1");
 
     // Verify dashboard F1 page
