@@ -17,27 +17,13 @@ void main() {
     // Verify that the text "Welcome !" is present
     expect(welcomeText, findsOneWidget);
 
-    // Tap on the "I agree to the terms & conditions" checkbox
-    await tester.tap(find.byType(Checkbox));
-    await tester.pumpAndSettle();
-
-    // Find the activation button (assuming it has a text label "Get Activation Code")
-    var activationButton =
-        find.widgetWithText(ElevatedButton, "Get Activation Code");
+    var checkBox = find.text("I agree to the terms & conditions");
+    await tester.tap(checkBox);
+    // Find the activation button (assuming it has a text label "Activate")
+    var activationButton = find.text("Get Activation Code");
 
     // Tap the activation button
     await tester.tap(activationButton);
     await tester.pumpAndSettle();
-
-    // Verify we are on the OTP page (assuming there's some text like "Enter OTP")
-    //expect(find.text('Enter the activation code you received via SMS.'),
-    //  findsOneWidget);
-
-    // Check if the button is actually found and interactable
-    //expect(find.text('Activate'), findsOneWidget);
-
-    // Tap the 'Activate' button.
-    //await tester.tap(activateButton);
-    //await tester.pumpAndSettle();
   });
 }
